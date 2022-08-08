@@ -2,12 +2,11 @@
  * Required External Modules
  */
 
-const express = require("express");
-const cors = require("cors");
-const helmet = require("helmet");
-const { clientOrigins, serverPort } = require("./config/env.dev");
-
-const { messagesRouter } = require("./messages/messages.router");
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const { clientOrigins, serverPort } = require('./config/env.dev');
+const { promptsRouter } = require('./prompts/prompts.router');
 
 /**
  * App Variables
@@ -24,9 +23,9 @@ app.use(helmet());
 app.use(cors({ origin: clientOrigins }));
 app.use(express.json());
 
-app.use("/api", apiRouter);
+app.use('/api', apiRouter);
 
-apiRouter.use("/messages", messagesRouter);
+apiRouter.use('/prompts', promptsRouter);
 
 app.use(function (err, req, res, next) {
   console.log(err);
