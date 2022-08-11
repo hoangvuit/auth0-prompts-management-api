@@ -4,7 +4,6 @@ dotenv.config();
 
 const audience = process.env.AUTH0_AUDIENCE;
 const domain = process.env.AUTH0_DOMAIN;
-const serverPort = process.env.SERVER_PORT;
 const clientOriginUrl = process.env.CLIENT_ORIGIN_URL;
 const clientId = process.env.AUTH0_CLIENT_ID;
 const clientSecret = process.env.AUTH0_CLIENT_SECRET;
@@ -38,7 +37,6 @@ const clientOrigins = ['http://localhost:8080'];
 module.exports = {
   audience,
   domain,
-  serverPort,
   clientOriginUrl,
   clientOrigins,
   clientId,
