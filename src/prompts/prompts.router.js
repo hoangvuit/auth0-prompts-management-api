@@ -25,8 +25,11 @@ promptsRouter.get('/custom-text', (req, res) => {
 });
 
 promptsRouter.put('/custom-text', (req, res) => {
+  const {
+    body: { prompt },
+  } = req;
   setCustomText(req.body).then(({ data }) => {
-    res.status(200).send({ status: 'success', data: data });
+    res.status(200).send({ status: 'success', data: { [prompt]: data } });
   });
 });
 

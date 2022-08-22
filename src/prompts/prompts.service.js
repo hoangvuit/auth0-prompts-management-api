@@ -47,7 +47,13 @@ const setCustomText = async ({ prompt, content }) => {
     },
     data: content,
   };
-  return axios(options);
+
+  try {
+    const data = await axios(options);
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 module.exports = {
