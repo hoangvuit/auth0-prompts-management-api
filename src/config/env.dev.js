@@ -26,7 +26,10 @@ if (!clientOriginUrl) {
   );
 }
 
-const clientOrigins = ['http://localhost:8080'];
+const clientOrigins = [
+  'http://localhost:8080',
+  'https://auth0-universal-login.herokuapp.com',
+];
 
 module.exports = {
   audience,
